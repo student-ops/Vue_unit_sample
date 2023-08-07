@@ -4,8 +4,13 @@
       <button @click="increment">クリック: {{ count }}</button>
       <input v-model="text" placeholder="Type here">
       <p>{{ text }}</p>
+      <AwesomeState />
     </div>
   </template>
+  
+  <script setup>
+  import AwesomeState from './AwesomeState.vue'
+  </script>
   
   <script>
   export default {
@@ -20,6 +25,10 @@
       increment() {
         this.count++;
       }
+    },
+    components: {
+        AwesomeState
     }
   };
   </script>
+  
