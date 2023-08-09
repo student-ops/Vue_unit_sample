@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch,defineProps } from 'vue'
+import { ref, watch,defineProps,defineEmits } from 'vue'
 const props = defineProps({
   msg: String
 })
@@ -14,6 +14,9 @@ async function fetchData() {
   )
   todoData.value = await res.json()
 }
+const emit = defineEmits(['response'])
+
+emit('response', 'hello from child')
 
 fetchData()
 
